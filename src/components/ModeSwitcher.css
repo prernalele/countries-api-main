@@ -1,0 +1,16 @@
+
+.modeClass {
+    display: flex;
+    align-items:center;
+    margin-right: 10px;
+    
+}
+
+.ion-icon {
+    align-items: center;
+}
+
+.modeText {
+    color: white;
+    margin-left: 10px;
+}

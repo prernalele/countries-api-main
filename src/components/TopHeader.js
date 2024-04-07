@@ -3,9 +3,9 @@ import "./TopHeader.css";
 
 function TopHeader() {
   return (
-    <div class="container">
-      <div class="headerTitle"> Where in the world ?</div>
-      <ModeSwitcher modeClass="modeClass" />
+    <div className="container">
+      <h1 className="headerTitle">Where in the world ?</h1>
+      <ModeSwitcher />
     </div>
   );
 }
