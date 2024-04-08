@@ -1,5 +1,13 @@
+import "./Search.css";
+
 function Search() {
-  <ion-icon name="search-outline">search icon</ion-icon>;
+  return (
+    <input
+      type="text"
+      placeholder="Search for a country"
+      className="searchBar"
+    />
+  );
 }
 
 export default Search;
