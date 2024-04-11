@@ -2,11 +2,14 @@ import "./Search.css";
 
 function Search() {
   return (
-    <input
-      type="text"
-      placeholder="Search for a country"
-      className="searchBar"
-    />
+    <div>
+      <input
+        type="text"
+        placeholder="Search for a country"
+        className="searchBar"
+      />
+      <ion-icon name="search-outline" className="searchIcon"></ion-icon>
+    </div>
   );
 }
 

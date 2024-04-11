@@ -4,5 +4,16 @@
     width : 250px;
     background-color: hsl(209, 23%, 22%); 
     border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+}
 
+::placeholder {
+    color: hsl(0, 0%, 100%);
+    opacity: 1; /* Firefox */
+    padding: 50px;
+  }
+
+ion-icon {
+    margin-left: -260px;
+    color: hsl(0, 0%, 100%);
 }
