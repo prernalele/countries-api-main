@@ -9,36 +9,21 @@ function Filter() {
     //gets data
     fetch(data)
       .then(setAllData(data))
-      // .then(
-      //   (uniqueRegionList = allData.map((data) => {
-      //     const isDuplicate = uniqueRegionList.find(
-      //       (unique) => unique === data.region
-      //     );
-      //     if (!isDuplicate) uniqueRegionList.push(data.region);
-      //     console.log("uniqueRegionList", uniqueRegionList);
-      //     return uniqueRegionList;
-      //   }))
-      // )
       .catch((error) => console.log("Error fetching data", error));
   }, []);
 
-  function uniqueRegions(e) {
+  useEffect(() => {
     allData.map((data) => {
-      const isDuplicate = uniqueRegionList.find(
-        (unique) => unique === data.region
-      );
-      if (!isDuplicate) setUniqueRegionList((pre) => [...pre, data.region]);
-      console.log("uniqueRegionList", uniqueRegionList);
-      //return uniqueRegionList;
+      if (!uniqueRegionList.includes(data.region)) {
+        setUniqueRegionList([...uniqueRegionList, data.region]);
+      }
     });
-    console.log(uniqueRegionList);
-    // return uniqueRegionList;
-  }
+  });
 
   return (
     <div>
       <label htmlFor="options"> Filter by Region</label>
-      <select id="options" onClick={uniqueRegions}>
+      <select id="options">
         <option value="select a region"> Select a region</option>
         {uniqueRegionList.length > 0 &&
           uniqueRegionList.map((region) => (
