@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./filter.css";
 import data from "./data.json";
 
 function Filter() {
@@ -21,10 +22,12 @@ function Filter() {
   });
 
   return (
-    <div>
-      <label htmlFor="options"> Filter by Region</label>
-      <select id="options">
-        <option value="select a region"> Select a region</option>
+    <div className="filterContainer">
+      <select className="dropdown">
+        <option className="dropdown-options" value="Filter by Region">
+          {" "}
+          Filter by Region
+        </option>
         {uniqueRegionList.length > 0 &&
           uniqueRegionList.map((region) => (
             <option value={region}>{region}</option>
