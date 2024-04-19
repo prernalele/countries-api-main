@@ -1,7 +1,12 @@
 import Card from "./Card";
+import "./cardHolder.css";
 
-const CardHolder = ({ allData }) => {
-  return <Card allData={allData} />;
+const CardHolder = ({ data }) => {
+  return (
+    <div className="cardHolderWrapper">
+      <Card data={data} />
+    </div>
+  );
 };
 
 export default CardHolder;

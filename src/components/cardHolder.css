@@ -1,0 +1,5 @@
+.cardHolderWrapper {
+    display: flex;
+    flex-direction: row;
+    overflow-wrap: normal;
+}

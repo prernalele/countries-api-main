@@ -25,11 +25,12 @@ function App() {
     });
   });
 
+
   return (
     <div>
       <TopHeader />
       <SearchFilter regionList={uniqueRegionList} />
-      <CardHolder allData={allData} />
+      <CardHolder data={allData} />
     </div>
   );
 }
