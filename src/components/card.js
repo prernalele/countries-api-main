@@ -3,7 +3,7 @@ import "./Card.css";
 
 const Card = ({ data }) => {
   return data.map((singleDataPoint, index) => {
-    console.log("singleDataPoint", singleDataPoint);
+
     const { flags, name, capital, population, region } = singleDataPoint;
     return (
       <div key={index} className="wrapper">
