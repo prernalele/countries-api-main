@@ -3,32 +3,32 @@ import "./Search.css";
 
 function Search() {
   const [searchCountry, setSearchCountry] = useState("");
-  const searchInUse = useRef(false);
+  const [searchInUse, setSearchInUse] = useState(false);
 
-  //const userInput = useRef("");
-  const searchFunction = (e) => {
-    console.log("e.target.value", e.target.value);
-    setSearchCountry(e.target.value);
+  const userInput = useRef("");
+
+  const searchClickHandler = (e) => {
+    setSearchInUse((prev) => !prev);
+  };
+  const handleUserInput = (e) => {
+    if (e.charCode === 13) {
+      const refValue = userInput.current.value;
+      setSearchCountry(refValue);
+      // call the method that fetches countries per searchCountry
+    }
   };
   return (
     <div>
       <input
         type="text"
-        placeholder="Search for a country"
+        placeholder={!searchInUse ? "Search for a country" : ""}
         className="searchBar"
-        value={searchCountry}
-        ref={searchInUse}
-        onClick={(e) => {
-          console.log("opposite searchInUse.current", !searchInUse.current);
-          console.log("e target value", e.target.value);
-          return (searchInUse.current = searchInUse.current + 1);
-        }}
-        onChange={searchFunction}
+        ref={userInput}
+        onClick={searchClickHandler}
+        onKeyPress={handleUserInput}
       />
-      {searchInUse.current === false ? (
+      {!searchInUse && (
         <ion-icon name="search-outline" className="searchIcon"></ion-icon>
-      ) : (
-        ""
       )}
     </div>
   );
