@@ -2,11 +2,11 @@ import Search from "./Search";
 import Filter from "./Filter";
 import "./SearchFilter.css";
 
-function SearchFilter({ regionList }) {
+function SearchFilter() {
   return (
     <div className="searchFilterContainer">
       <Search />
-      <Filter regionList={regionList} />
+      <Filter />
     </div>
   );
 }

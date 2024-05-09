@@ -1,25 +1,10 @@
-// import React, { useState, useEffect, useRef } from "react";
+import React, { useContext } from "react";
+import DataContext from "../dataContext";
 import "./filter.css";
 //import data from "./data.json";
 
-function Filter({ regionList }) {
-  // const [uniqueRegionList, setUniqueRegionList] = useState([]);
-  // const [allData, setAllData] = useState([]);
-
-  // useEffect(() => {
-  //   //gets data
-  //   fetch(data)
-  //     .then(setAllData(data))
-  //     .catch((error) => console.log("Error fetching data", error));
-  // }, []);
-
-  // useEffect(() => {
-  //   allData.map((data) => {
-  //     if (!uniqueRegionList.includes(data.region)) {
-  //       setUniqueRegionList([...uniqueRegionList, data.region]);
-  //     }
-  //   });
-  // });
+function Filter() {
+  const { uniqueRegionList } = useContext(DataContext);
 
   return (
     <div className="filterContainer">
@@ -27,8 +12,8 @@ function Filter({ regionList }) {
         <option className="dropdown-options" value="Filter by Region">
           Filter by Region
         </option>
-        {regionList.length > 0 &&
-          regionList.map((region, index) => (
+        {uniqueRegionList.length > 0 &&
+          uniqueRegionList.map((region, index) => (
             <option key={index} value={region}>
               {region}
             </option>

@@ -5,6 +5,7 @@ import TopHeader from "./components/TopHeader";
 import SearchFilter from "./components/SearchFilter";
 import CardHolder from "./components/CardHolder";
 import data from "./components/data.json";
+import { DataContextProvider } from "./dataContext";
 
 function App() {
   const [uniqueRegionList, setUniqueRegionList] = useState([]);
@@ -25,12 +26,13 @@ function App() {
     });
   });
 
-
   return (
     <div>
-      <TopHeader />
-      <SearchFilter regionList={uniqueRegionList} />
-      <CardHolder data={allData} />
+      <DataContextProvider value={{ allData, uniqueRegionList }}>
+        <TopHeader />
+        <SearchFilter />
+        <CardHolder data={allData} />
+      </DataContextProvider>
     </div>
   );
 }

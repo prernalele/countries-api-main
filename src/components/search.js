@@ -1,7 +1,11 @@
 import { useState, useRef } from "react";
+import { useContext } from "react";
+import DataContext from "../dataContext";
 import "./Search.css";
 
 function Search() {
+  // console.log("data", data && Object.entries(data[0]));
+  const { allData, uniqueRegionList } = useContext(DataContext);
   const [searchCountry, setSearchCountry] = useState("");
   const [searchInUse, setSearchInUse] = useState(false);
 
