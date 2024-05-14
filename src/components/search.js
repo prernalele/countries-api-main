@@ -1,12 +1,8 @@
 import { useState, useRef } from "react";
-import { useContext } from "react";
-import DataContext from "../dataContext";
+
 import "./Search.css";
 
-function Search() {
-  // console.log("data", data && Object.entries(data[0]));
-  const { allData, uniqueRegionList } = useContext(DataContext);
-  const [searchCountry, setSearchCountry] = useState("");
+function Search({ searchCountry, setSearchCountry }) {
   const [searchInUse, setSearchInUse] = useState(false);
 
   const userInput = useRef("");
@@ -14,6 +10,7 @@ function Search() {
   const searchClickHandler = (e) => {
     setSearchInUse((prev) => !prev);
   };
+
   const handleUserInput = (e) => {
     if (e.charCode === 13) {
       const refValue = userInput.current.value;

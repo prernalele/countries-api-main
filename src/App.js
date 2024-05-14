@@ -10,6 +10,7 @@ import { DataContextProvider } from "./dataContext";
 function App() {
   const [uniqueRegionList, setUniqueRegionList] = useState([]);
   const [allData, setAllData] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => {
     //gets data
@@ -30,8 +31,11 @@ function App() {
     <div>
       <DataContextProvider value={{ allData, uniqueRegionList }}>
         <TopHeader />
-        <SearchFilter />
-        <CardHolder data={allData} />
+        <SearchFilter
+          filteredResults={filteredResults}
+          setFilteredResults={setFilteredResults}
+        />
+        <CardHolder filteredResults={filteredResults} />
       </DataContextProvider>
     </div>
   );
