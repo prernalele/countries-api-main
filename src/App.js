@@ -1,17 +1,19 @@
 import "./components/TopHeader";
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import TopHeader from "./components/TopHeader";
 import SearchFilter from "./components/SearchFilter";
 import CardHolder from "./components/CardHolder";
 import data from "./components/data.json";
 import { DataContextProvider } from "./dataContext";
 import ThemeSwitchContextProvider from "./context/ThemeSwitchContextProvider"
+import ThemeSwitchContext from "./context/ThemeSwitchContext";
 
 function App() {
   const [uniqueRegionList, setUniqueRegionList] = useState([]);
   const [allData, setAllData] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
+  const { theme } = useContext(ThemeSwitchContext)
 
   useEffect(() => {
     //gets data
@@ -29,8 +31,8 @@ function App() {
   });
 
   return (
-    <div>
-      <ThemeSwitchContextProvider>
+
+      <div class={theme}>
       <DataContextProvider value={{ allData, uniqueRegionList }}>
         <TopHeader />
         <SearchFilter
@@ -39,8 +41,8 @@ function App() {
         />
         <CardHolder filteredResults={filteredResults} />
       </DataContextProvider>
-      </ThemeSwitchContextProvider>
     </div>
+
   );
 }
 

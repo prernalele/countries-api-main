@@ -1,4 +1,11 @@
 .container {
   display: flex;
-  background: hsl(209, 23%, 22%);
+  background:  hsl(209, 23%, 22%) 
+}
+.dark {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.light {
+  background-color: hsl(0, 0%, 98%);
 }

@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ThemeSwitchContextProvider from './context/ThemeSwitchContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ThemeSwitchContextProvider>
     <App />
+    </ThemeSwitchContextProvider>
+    
   </React.StrictMode>
 );
 
