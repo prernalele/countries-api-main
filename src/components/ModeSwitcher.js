@@ -4,10 +4,11 @@ import ThemeSwitchContext from "../context/ThemeSwitchContext";
 
 function ModeSwitcher() {
   const { toggleTheme } = useContext(ThemeSwitchContext)
+  const {theme} = useContext(ThemeSwitchContext)
   return (
-    <div className="modeClass">
+    <div className= {`modeClass ${theme}`}>
       <ion-icon name="moon" className="moon" onClick={toggleTheme}></ion-icon>
-      <span className="modeText">Mode</span>
+      <span className={`modeText ${theme}`}  onClick={toggleTheme}>Mode</span>
     </div>
   );
 }

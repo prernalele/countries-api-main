@@ -32,7 +32,7 @@ function App() {
 
   return (
 
-      <div class={theme}>
+      <div className={theme}>
       <DataContextProvider value={{ allData, uniqueRegionList }}>
         <TopHeader />
         <SearchFilter

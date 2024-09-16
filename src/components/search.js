@@ -25,7 +25,7 @@ function Search({ searchCountry, setSearchCountry }) {
         placeholder={!searchInUse ? "Search for a country" : ""}
         className="searchBar"
         ref={userInput}
-        onClick={searchClickHandler}
+        onChange={searchClickHandler}
         onKeyPress={handleUserInput}
       />
       {!searchInUse && (
