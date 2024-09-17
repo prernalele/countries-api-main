@@ -3,15 +3,24 @@
     flex-direction: column;
     justify-content: center;
     border: 0.1px  black;
-    margin: 10px;
+    margin: 25px;
     padding: 10px;
-    width: 20%;
+    width: 18%;
+    height: 8%;
+    border-radius: 5px;
 }
 
 .cardDetailsWrapper {
-    margin : 10px;
+    margin : 5px;
+    padding: 10px;
 }
-
+#name-value {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    font-size: medium;
+    margin: 10px;
+}
 .dark {
     background-color: hsl(209, 23%, 22%);
 }

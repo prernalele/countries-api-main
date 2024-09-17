@@ -1,14 +1,15 @@
 import { useState, useContext, useEffect } from "react";
 import DataContext from "../dataContext";
-import ThemeSwitchContext from "../context/ThemeSwitchContext";
 import Search from "./Search";
 import Filter from "./Filter";
 import "./SearchFilter.css";
 
+
 function SearchFilter({ setFilteredResults }) {
   const { allData } = useContext(DataContext);
   const [searchCountry, setSearchCountry] = useState("");
-  const {theme} = useContext(ThemeSwitchContext)
+
+
 
   useEffect(() => {
     const newFilteredResult = allData.filter(
@@ -18,8 +19,9 @@ function SearchFilter({ setFilteredResults }) {
   }, [searchCountry, allData, setFilteredResults]);
 
   return (
-    <div className={`searchFilterContainer ${theme}`}>
+    <div className="searchFilterContainer">
       <Search
+
         searchCountry={searchCountry}
         setSearchCountry={setSearchCountry}
       />

@@ -1,9 +1,10 @@
 
 .modeClass {
     display: flex;
-    align-items:center;
-    margin-right: 10px;
-    
+    align-items:right;
+    margin-right: 0px;
+    justify-content: flex-end;
+    margin-right: 90px;
 }
 
 .ion-icon {

@@ -24,5 +24,6 @@ ion-icon {
 }
 
 .light {
-    background-color: hsl(0, 0%, 98%);
+    background-color: hsl(0, 0%, 52%);
+    color: hsl(200, 15%, 8%)
 }

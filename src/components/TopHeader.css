@@ -1,18 +1,18 @@
 .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:space-between;
+    align-items: center;
     height: 50px;
 }
 
 .headerTitle {
     margin-left: 10px;
-    align-content: center;
     font-weight: bold;
 }
 
 .light {
-    background-color: hsl(0, 0%, 98%);
+    background-color:hsl(0, 0%, 52%);
     color: hsl(200, 15%, 8%);
 }
 
