@@ -7,8 +7,8 @@ function ModeSwitcher() {
   const {theme} = useContext(ThemeSwitchContext)
   return (
     <div className= {`modeClass ${theme}`}>
-      <ion-icon name="moon" className="moon" onClick={toggleTheme}></ion-icon>
-      <span className={`modeText ${theme}`}  onClick={toggleTheme}>Mode</span>
+      <ion-icon name="moon" style={{color: `${theme}` === "light" ? "black" : "white"}} onClick={toggleTheme}></ion-icon>
+      <span className={`modeText ${theme}`}  onClick={toggleTheme}>{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
     </div>
   );
 }

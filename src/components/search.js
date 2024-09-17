@@ -1,9 +1,11 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import ThemeSwitchContext from "../context/ThemeSwitchContext";
 
 import "./Search.css";
 
 function Search({ searchCountry, setSearchCountry }) {
   const [searchInUse, setSearchInUse] = useState(false);
+  const {theme} = useContext(ThemeSwitchContext)
 
   const userInput = useRef("");
 
@@ -23,7 +25,7 @@ function Search({ searchCountry, setSearchCountry }) {
       <input
         type="text"
         placeholder={!searchInUse ? "Search for a country" : ""}
-        className="searchBar"
+        className={`searchBar ${theme}`}
         ref={userInput}
         onChange={searchClickHandler}
         onKeyPress={handleUserInput}

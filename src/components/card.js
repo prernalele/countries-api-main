@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
+import ThemeSwitchContext from "../context/ThemeSwitchContext";
 import "./Card.css";
 
 const Card = ({ data, filteredResults }) => {
+  const {theme} = useContext(ThemeSwitchContext)
   return (filteredResults?.length > 0 ? filteredResults : data).map(
     (singleDataPoint, index) => {
       const { flags, name, capital, population, region } = singleDataPoint;
       return (
-        <div key={index} className="wrapper">
+        <div key={index} className={`wrapper ${theme}`}>
           <img alt={`flag of ${name}`} src={flags.svg} />
           <div className="cardDetailsWrapper">
             <div className="name">

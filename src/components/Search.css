@@ -2,19 +2,27 @@
     margin: 20px;
     height: 32px;
     width : 250px;
-    background-color: hsl(209, 23%, 22%); 
+/*    background-color: hsl(209, 23%, 22%); 
+    color: hsl(0, 0%, 100%); */
     border-radius: 5px;
-    color: hsl(0, 0%, 100%);
     border-color: none;
 }
 
 ::placeholder {
-    color: hsl(0, 0%, 100%);
+    /*color: hsl(0, 0%, 100%); */
     opacity: 1; /* Firefox */
     padding: 50px;
-  }
+}
 
 ion-icon {
     margin-left: -260px;
     color: hsl(0, 0%, 100%);
+}
+
+.dark {
+    background-color: hsl(209, 23%, 22%);
+}
+
+.light {
+    background-color: hsl(0, 0%, 98%);
 }
