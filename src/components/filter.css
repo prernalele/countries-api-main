@@ -29,4 +29,7 @@
     background-color: hsl(0, 0%, 52%);
     color: hsl(200, 15%, 8%)
 }
+select:focus {
+    background-color: lightgray;
+}
 

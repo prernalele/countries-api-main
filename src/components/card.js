@@ -12,7 +12,7 @@ const Card = ({ data, filteredResults }) => {
           <img alt={`flag of ${name}`} src={flags.svg} />
           <div className="cardDetailsWrapper">
             <div className="name">
-              <span ID="name-value"> {name}</span>
+              <span id="name-value"> {name}</span>
             </div>
             <div className="capital">
               <span className="label">Capital: </span>

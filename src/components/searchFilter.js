@@ -21,11 +21,10 @@ function SearchFilter({ setFilteredResults }) {
   return (
     <div className="searchFilterContainer">
       <Search
-
         searchCountry={searchCountry}
         setSearchCountry={setSearchCountry}
       />
-      <Filter />
+      <Filter setFilter={setFilteredResults}/>
     </div>
   );
 }
