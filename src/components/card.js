@@ -2,13 +2,25 @@ import React, {useContext} from "react";
 import ThemeSwitchContext from "../context/ThemeSwitchContext";
 import "./Card.css";
 
-const Card = ({ data, filteredResults }) => {
+const Card = ({ data, filteredResults,isCardClicked,
+  setIsCardClicked, clickedCountry, setClickedCountry }) => {
+
   const {theme} = useContext(ThemeSwitchContext)
+  console.log("country clicked", clickedCountry)
+
+  const openCountryCard = (e) => {
+    console.log("e.target", e.target.closest('div'))
+    setIsCardClicked(!isCardClicked)
+    setClickedCountry(e.target.value)
+  }
+
+
   return (filteredResults?.length > 0 ? filteredResults : data).map(
     (singleDataPoint, index) => {
       const { flags, name, capital, population, region } = singleDataPoint;
       return (
-        <div key={index} className={`wrapper ${theme}`}>
+        <div key={index} className={`wrapper ${theme}`} onClick={openCountryCard}
+        value={name}>
           <img alt={`flag of ${name}`} src={flags.svg} />
           <div className="cardDetailsWrapper">
             <div className="name">
