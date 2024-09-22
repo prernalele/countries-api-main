@@ -15,7 +15,7 @@ function App() {
   const [allData, setAllData] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
   const [isSingleCardClicked, setIsSingleCardClicked] = useState(false)
-  const [clickedCountry, setClickedCountry] = useState(null)
+  const [clickedCountry, setClickedCountry] = useState({})
   const { theme } = useContext(ThemeSwitchContext)
 
 
@@ -41,7 +41,12 @@ function App() {
         <TopHeader />
         {isSingleCardClicked && <SingleCard 
         clickedCountry={clickedCountry}
-        setClickedCountry={setClickedCountry}/>}
+        setClickedCountry={setClickedCountry}
+        isSingleCardClicked={isSingleCardClicked}
+        setIsCardClicked={setIsSingleCardClicked}
+        />}
+        {!isSingleCardClicked && 
+        <div>
         <SearchFilter
           filteredResults={filteredResults}
           setFilteredResults={setFilteredResults}
@@ -52,6 +57,7 @@ function App() {
         setIsCardClicked = {setIsSingleCardClicked}
         clickedCountry={clickedCountry}
         setClickedCountry={setClickedCountry} />
+        </div>}
       </DataContextProvider>
     </div>
 

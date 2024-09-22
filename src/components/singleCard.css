@@ -1,0 +1,13 @@
+.containerSingle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dark {
+    background-color: hsl(209, 23%, 22%);
+  }
+  
+  .light {
+    background-color: hsl(0, 0%, 98%);
+  }
