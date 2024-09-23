@@ -35,29 +35,28 @@ function App() {
   });
 
   return (
-
-      <div className={`${theme}`}>
+      <div>
       <DataContextProvider value={{ allData, uniqueRegionList }}>
         <TopHeader />
-        {isSingleCardClicked && <SingleCard 
+        {isSingleCardClicked ? <SingleCard 
         clickedCountry={clickedCountry}
         setClickedCountry={setClickedCountry}
         isSingleCardClicked={isSingleCardClicked}
         setIsCardClicked={setIsSingleCardClicked}
-        />}
-        {!isSingleCardClicked && 
+        /> :
         <div>
         <SearchFilter
           filteredResults={filteredResults}
           setFilteredResults={setFilteredResults}
-        />
+        /> 
         <CardHolder 
         isCardClicked = {isSingleCardClicked} 
         filteredResults={filteredResults} 
         setIsCardClicked = {setIsSingleCardClicked}
         clickedCountry={clickedCountry}
         setClickedCountry={setClickedCountry} />
-        </div>}
+        </div>
+      }
       </DataContextProvider>
     </div>
 

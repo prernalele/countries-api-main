@@ -1,35 +1,58 @@
 .containerSingle {
   display: flex;
-  justify-content: self;
+  justify-content: flex-start;
   flex-direction: column;
-
+  width: 1190px;
+  height: 578px;
+  align-items: flex-start;
 }
 
 .backButton {
   border: 1px;
-  padding: 5px;
-  margin: 5px;
+  padding: 20px;
+  margin: 10px;
   align-items:left;
+  justify-items: flex-start;
 }
 
 .details {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  width: 100%;
+  
+}
+
+.middleSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .otherDetails {
+  display: flex;
   padding-top: 1px;
+  margin: 5px;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
+
+.rightSection {
+  padding-top: 60px;
+}
+
 
 .flag {
   width: 30%;
+  height: 100%;
 }
 
-.dark {
-    background-color: hsl(209, 23%, 22%);
+.darkDetails {
+    background-color:hsl(207, 26%, 17%);
+    color: white;
   }
   
-  .light {
-    background-color: hsl(0, 0%, 98%);
+.lightDetails {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(200, 15%, 8%);
   }

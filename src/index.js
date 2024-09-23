@@ -11,7 +11,6 @@ root.render(
     <ThemeSwitchContextProvider>
     <App />
     </ThemeSwitchContextProvider>
-    
   </React.StrictMode>
 );
 

@@ -18,8 +18,8 @@ const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => 
         setIsCardClicked(!isSingleCardClicked)
     }
     return (
-        <div className={`containerSingle`}>
-            <button className={`backButton ${theme}`} onClick={backToHome}>Back</button>
+        <div className={`containerSingle ${theme}Details`}>
+            <button className={`backButton ${theme}Details`} onClick={backToHome}>Back</button>
             <div className='details'>
                 <img className="leftSection flag" alt={`flag of ${name}`} src={flags.svg} />
                 <div className='middleSection'>
