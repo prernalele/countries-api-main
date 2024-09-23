@@ -1,7 +1,29 @@
 .containerSingle {
   display: flex;
-  justify-content: center;
+  justify-content: self;
   flex-direction: column;
+
+}
+
+.backButton {
+  border: 1px;
+  padding: 5px;
+  margin: 5px;
+  align-items:left;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.otherDetails {
+  padding-top: 1px;
+}
+
+.flag {
+  width: 30%;
 }
 
 .dark {

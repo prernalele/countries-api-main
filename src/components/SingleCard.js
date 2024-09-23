@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import ThemeSwitchContext from '../context/ThemeSwitchContext'
-import DataContext from '../dataContext'
+import './singleCard.css'
 
 const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => {
     const { theme } = useContext(ThemeSwitchContext)
@@ -18,22 +18,26 @@ const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => 
         setIsCardClicked(!isSingleCardClicked)
     }
     return (
-        <div className={`containerSingle ${theme}`}>
-            <button className={theme} onClick={backToHome}>Back</button>
-            <div className='details'></div>
-            <img className="leftSection" alt={`flag of ${name}`} src={flags.svg} />
-            <div className='middleSection'>
-                <h1>{name} </h1>
-                <div>Native Name: {nativeName}</div>
-                <div>Population: {population}</div>
-                <div>Region: {region}</div>
-                <div>Sub Region: {subRegion}</div>
-                <div>Capital: {capital}</div>
-            </div>
-            <div className='rightSection'>
-                <div>Top Level Domain: {topLevelDomain}</div>
-                <div>Currencies: {currencies[0].name}</div>
-                <div>Languages: {languages[0].name}</div>
+        <div className={`containerSingle`}>
+            <button className={`backButton ${theme}`} onClick={backToHome}>Back</button>
+            <div className='details'>
+                <img className="leftSection flag" alt={`flag of ${name}`} src={flags.svg} />
+                <div className='middleSection'>
+                    <h3>{name} </h3>
+                    <div className='otherDetails'>
+                        <div>Native Name: {nativeName}</div>
+                        <div>Population: {population}</div>
+                        <div>Region: {region}</div>
+                        <div>Sub Region: {subRegion}</div>
+                        <div>Capital: {capital}</div>
+                    </div>
+
+                </div>
+                <div className='rightSection'>
+                    <div>Top Level Domain: {topLevelDomain}</div>
+                    <div>Currencies: {currencies[0].name}</div>
+                    <div>Languages: {languages[0].name}</div>
+                </div>
             </div>
         </div>
     )
