@@ -2,25 +2,38 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  width: 1190px;
-  height: 578px;
+  width: 100%;
+  height: 100vh;
   align-items: flex-start;
 }
 
 .backButton {
-  border: 1px;
-  padding: 20px;
-  margin: 10px;
+  border: 1px transparent;
+  padding: 10px;
+  margin-left: 90px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   align-items:left;
   justify-items: flex-start;
 }
+
+  .backButton.darkDetails{
+    border: 1px transparent grey;
+    background-color: hsl(209, 23%, 22%);
+  }
+
+  .backButton.lightDetails{
+    border: 1px transparent grey;
+    background-color:  hsl(0, 0%, 100%);
+  }
+  
 
 .details {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  
+  margin: 10px;
 }
 
 .middleSection {
@@ -53,6 +66,6 @@
   }
   
 .lightDetails {
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 94%);
     color: hsl(200, 15%, 8%);
   }

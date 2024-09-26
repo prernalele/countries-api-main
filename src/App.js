@@ -44,7 +44,7 @@ function App() {
         isSingleCardClicked={isSingleCardClicked}
         setIsCardClicked={setIsSingleCardClicked}
         /> :
-        <div>
+        <div className={theme}>
         <SearchFilter
           filteredResults={filteredResults}
           setFilteredResults={setFilteredResults}

@@ -22,12 +22,20 @@
     margin: 10px;
 }
 .dark {
-    background-color: hsl(209, 23%, 22%);
+    background-color: hsl(207, 26%, 17%);
 }
 
 .light {
-    background-color:hsl(0, 0%, 94%);
+    background-color: hsl(0, 0%, 94%);
+}
+
+.lightElements {
+    background-color:hsl(0, 0%, 100%);
     
+}
+
+.darkElements {
+    background-color: hsl(209, 23%, 22%);
 }
 
 .label {
