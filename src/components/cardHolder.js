@@ -5,12 +5,10 @@ import Card from "./Card";
 import "./cardHolder.css";
 
 const CardHolder = ({ filteredResults,
-                       isCardClicked, 
-                       setIsCardClicked ,
-                       clickedCountry,
-                       setClickedCountry}) => {
+                      isCardClicked, 
+                      setIsCardClicked ,
+                      setClickedCountry}) => {
   const { allData } = useContext(DataContext);
-  console.log("isCardClicked in cardHolder", isCardClicked)
 
   return (
     <div className="cardHolderWrapper">
@@ -19,7 +17,6 @@ const CardHolder = ({ filteredResults,
         filteredResults={filteredResults} 
         isCardClicked = {isCardClicked}
         setIsCardClicked = {setIsCardClicked}
-        clickedCountry={clickedCountry}
         setClickedCountry={setClickedCountry}
         />
     </div>

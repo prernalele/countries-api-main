@@ -36,7 +36,7 @@ function App() {
 
   return (
       <div>
-      <DataContextProvider value={{ allData, uniqueRegionList }}>
+      <DataContextProvider value={{ allData,setAllData, uniqueRegionList }}>
         <TopHeader />
         {isSingleCardClicked ? <SingleCard 
         clickedCountry={clickedCountry}
@@ -53,7 +53,6 @@ function App() {
         isCardClicked = {isSingleCardClicked} 
         filteredResults={filteredResults} 
         setIsCardClicked = {setIsSingleCardClicked}
-        clickedCountry={clickedCountry}
         setClickedCountry={setClickedCountry} />
         </div>
       }

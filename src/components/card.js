@@ -4,49 +4,49 @@ import DataContext from "../dataContext";
 import "./Card.css";
 
 const Card = ({ data, filteredResults,isCardClicked,
-  setIsCardClicked, clickedCountry, setClickedCountry }) => {
+  setIsCardClicked, setClickedCountry }) => {
 
   const {theme} = useContext(ThemeSwitchContext)
 
   const { allData } = useContext(DataContext);
 
   const openCountryCard = (e) => {
-    const indexClicked =  e.target.closest('div').getAttribute('data-key')
-    console.log("e.target", e.target.closest('div').getAttribute('data-key') )
-    console.log("data", allData[indexClicked])
+    const nameClicked = e.target.getAttribute('data-name')
     setIsCardClicked(!isCardClicked)
-    setClickedCountry(allData[indexClicked])
+    const countryLookup = allData.find((dataPoint) => dataPoint.name.toLowerCase() ===nameClicked.toLowerCase() )
+    console.log("countryLookup", countryLookup)
+    setClickedCountry(countryLookup)
   }
 
 
-  return (filteredResults?.length > 0 ? filteredResults : data).map(
+  return ((filteredResults?.length > 0 ? filteredResults : data).map(
     (singleDataPoint, index) => {
       const { flags, name, capital, population, region } = singleDataPoint;
       return (
-        <div data-key={index} className={`wrapper ${theme}`} onClick={openCountryCard}
-        data-value={name}>
-          <img  data-key={index} alt={`flag of ${name}`} src={flags.svg} />
-          <div data-key={index} className="cardDetailsWrapper">
-            <div className="name">
-              <span id="name-value"> {name}</span>
+        <div key={index} className={`wrapper ${theme}`} onClick={openCountryCard}
+        data-name={name}>
+          <img  data-name={name} alt={`flag of ${name}`} src={flags.svg} />
+          <div data-name={name} className="cardDetailsWrapper">
+            <div data-name={name} className="name">
+              <span data-name={name} id="name-value"> {name}</span>
             </div>
-            <div  data-key={index} className="capital">
-              <span className="label">Capital: </span>
-              <span className="capital-value"> {capital}</span>
+            <div  data-name={name}className="capital">
+              <span data-name={name} className="label">Capital: </span>
+              <span data-name={name} className="capital-value"> {capital}</span>
             </div>
-            <div data-key={index} className="region">
-              <span className="label">Region:</span>
-              <span className="region-value">{region}</span>
+            <div data-name={name} className="region">
+              <span data-name={name} className="label">Region:</span>
+              <span data-name={name} className="region-value">{region}</span>
             </div>
-            <div data-key={index} className="population">
-              <span className="label">Population:</span>
-              <span className="population-value">{population}</span>
+            <div data-name={name} className="population">
+              <span data-name={name} className="label">Population:</span>
+              <span data-name={name} className="population-value">{population}</span>
             </div>
           </div>
         </div>
       );
     }
-  );
-};
+  ) )
+  }
 
 export default Card;
