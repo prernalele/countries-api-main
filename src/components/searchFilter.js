@@ -9,8 +9,6 @@ function SearchFilter({ setFilteredResults }) {
   const { allData } = useContext(DataContext);
   const [searchCountry, setSearchCountry] = useState("");
 
-
-
   useEffect(() => {
     const newFilteredResult = allData.filter(
       (data) => data.name.toLowerCase() === searchCountry.toLowerCase()
