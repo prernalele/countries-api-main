@@ -35,7 +35,7 @@ function App() {
   });
 
   return (
-      <div>
+      <div className={theme}>
       <DataContextProvider value={{ allData,setAllData, uniqueRegionList }}>
         <TopHeader />
         {isSingleCardClicked ? <SingleCard 
@@ -44,7 +44,7 @@ function App() {
         isSingleCardClicked={isSingleCardClicked}
         setIsCardClicked={setIsSingleCardClicked}
         /> :
-        <div className={theme}>
+        <div className={`searchResultWrapper ${theme}`} >
         <SearchFilter
           filteredResults={filteredResults}
           setFilteredResults={setFilteredResults}

@@ -1,24 +1,28 @@
 .filterContainer {
     display:flex;
-    color: hsl(0, 0%, 100%);
+    /*color: hsl(0, 0%, 100%);*/
     height: 32px;
     width: 252px;
     padding: 0px;
-    background-color: hsl(209, 23%, 22%); 
+    /* background-color: hsl(209, 23%, 22%); */
     margin-top: 25px;
     border-radius: 5px;
 }
 
 .dropdown {
-    background-color: hsl(209, 23%, 22%); 
-    color:hsl(0, 0%, 100%);
+    /*background-color: hsl(209, 23%, 22%); 
+    color:hsl(0, 0%, 100%);*/
     border-radius: 5px;
     height: 32px;
     width: 252px;
 }
 
-.dropdown-options {
+.filterContainer select::after {
     color: aqua;
+}
+
+#continentsList {
+
 }
 
 .dark {
