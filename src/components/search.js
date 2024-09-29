@@ -5,20 +5,27 @@ import "./Search.css";
 
 function Search({ searchCountry, setSearchCountry }) {
   const [searchInUse, setSearchInUse] = useState(false);
+  const [timer, setTimer] = useState(null)
   const {theme} = useContext(ThemeSwitchContext)
 
   const userInput = useRef("");
 
-  const searchClickHandler = (e) => {
-    setSearchInUse((prev) => !prev);
-  };
-
   const handleUserInput = (e) => {
-    if (e.charCode === 13) {
-      const refValue = userInput.current.value;
-      setSearchCountry(refValue);
-      // call the method that fetches countries per searchCountry
+   setSearchInUse(true)
+   const refValue = userInput.current.value;
+   setSearchCountry(refValue);
+
+   // clearing any earlier timer
+    if(timer) {
+      clearTimeout(timer);
     }
+
+  // setting new timer
+    const newTimer = setTimeout(() => {
+      setSearchInUse(false)
+    }, 1000)
+
+    setTimer(newTimer)
   };
   return (
     <div>
@@ -27,8 +34,7 @@ function Search({ searchCountry, setSearchCountry }) {
         placeholder={!searchInUse ? "Search for a country" : ""}
         className={`searchBar ${theme}`}
         ref={userInput}
-        onChange={searchClickHandler}
-        onKeyPress={handleUserInput}
+        onChange={handleUserInput}
       />
       {!searchInUse && (
         <ion-icon name="search-outline" className="searchIcon"></ion-icon>
