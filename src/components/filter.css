@@ -15,14 +15,12 @@
     border-radius: 5px;
     height: 32px;
     width: 252px;
+    appearance: none;
 }
 
-.filterContainer select::after {
-    color: aqua;
-}
-
-#continentsList {
-
+.dropdown select option {
+    padding: 20px;
+    background-color: aquamarine;
 }
 
 .dark {

@@ -23,7 +23,7 @@ const Card = ({ data, filteredResults,isCardClicked,
     (singleDataPoint, index) => {
       const { flags, name, capital, population, region } = singleDataPoint;
       return (
-        <div key={index} className={`wrapper ${theme}`} onClick={openCountryCard}
+        <div key={index} className={`wrapper ${theme}Elements`} onClick={openCountryCard}
         data-name={name}>
           <img  data-name={name} alt={`flag of ${name}`} src={flags.svg} />
           <div data-name={name} className="cardDetailsWrapper">

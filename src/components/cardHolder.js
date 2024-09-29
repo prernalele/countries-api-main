@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import DataContext from "../dataContext";
+import ThemeSwitchContext from "../context/ThemeSwitchContext";
 import Card from "./Card";
 
 import "./cardHolder.css";
@@ -9,9 +10,10 @@ const CardHolder = ({ filteredResults,
                       setIsCardClicked ,
                       setClickedCountry}) => {
   const { allData } = useContext(DataContext);
+  const { theme } = useContext(ThemeSwitchContext);
 
   return (
-    <div className="cardHolderWrapper">
+    <div className={`cardHolderWrapper ${theme}`}>
       <Card 
         data={allData} 
         filteredResults={filteredResults} 

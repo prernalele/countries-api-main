@@ -35,7 +35,7 @@ function App() {
   });
 
   return (
-      <div className={theme}>
+      <div className={`appContainer ${theme}`}>
       <DataContextProvider value={{ allData,setAllData, uniqueRegionList }}>
         <TopHeader />
         {isSingleCardClicked ? <SingleCard 
