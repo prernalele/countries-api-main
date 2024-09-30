@@ -17,15 +17,15 @@
   justify-items: flex-start;
 }
 
-  .backButton.darkDetails{
-    border: 1px transparent grey;
-    background-color: hsl(209, 23%, 22%);
-  }
+.backButton.darkDetails{
+  border: 1px transparent grey;
+  background-color: hsl(209, 23%, 22%);
+}
 
-  .backButton.lightDetails{
-    border: 1px transparent grey;
-    background-color:  hsl(0, 0%, 100%);
-  }
+.backButton.lightDetails{
+  border: 1px transparent grey;
+  background-color:  hsl(0, 0%, 100%);
+}
   
 
 .details {
@@ -50,6 +50,30 @@
   justify-content: space-evenly;
 }
 
+.middleAndRightContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.middleRightAndBordersContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.borders {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1px;
+  margin-top: 30px;
+  padding: 2px;
+  flex-wrap: wrap;
+}
+
+.borderCountries {
+  margin-left: 4px;
+  padding: 8px;
+}
+
 .rightSection {
   padding-top: 60px;
 }
@@ -69,3 +93,15 @@
     background-color: hsl(0, 0%, 94%);
     color: hsl(200, 15%, 8%);
   }
+
+.lightElements {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(200, 15%, 8%);
+    border: none;
+  }
+
+.darkElements {
+    /*background-color: hsl(207, 26%, 17%);*/
+    background-color:hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
+  } 

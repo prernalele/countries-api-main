@@ -30,7 +30,8 @@ const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => 
             <button className={`backButton ${theme}Details`} onClick={backToHome}>Back</button>
             <div className='details'>
                 <img className="leftSection flag" alt={`flag of ${name}`} src={flag} />
-                <div>
+                <div className='middleRightAndBordersContainer'>
+                <div className="middleAndRightContainer">
                     <div className='middleSection'>
                         <h3>{name} </h3>
                         <div className='otherDetails'>
@@ -47,13 +48,14 @@ const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => 
                         <div>Currencies: {''||currencies?.map((currency) => <span>{currency.name}</span>)}</div>
                         <div>Languages: {languages.map((lang) => <span>{lang.name}</span> )}</div>
                     </div>
-                    <div className='borders'>
-                        {borderFullNames.map((code) => 
-                        <button>{code}</button>
-                        )}
-                    </div>
                 </div>
-
+                <div className='borders'>
+                        {`Border countries: `}
+                        {borderFullNames.map((code) => 
+                        <button className={`${theme}Elements borderCountries`}>{code}</button>
+                        )}
+                </div>
+                </div>
             </div>
         </div>
     )
