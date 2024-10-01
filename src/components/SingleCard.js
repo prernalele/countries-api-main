@@ -3,7 +3,8 @@ import ThemeSwitchContext from '../context/ThemeSwitchContext'
 import DataContext from '../dataContext'
 import './singleCard.css'
 
-const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => {
+const SingleCard = ({clickedCountry,setClickedCountry, isSingleCardClicked, setIsCardClicked}) => {
+
     const { theme } = useContext(ThemeSwitchContext)
     const {allData } = useContext(DataContext)
     const { flag
@@ -24,6 +25,12 @@ const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => 
 
     const borderFullNames = 
     borders?.map((border) => allData?.find((eachCountry) => eachCountry.alpha3Code === border ).name) 
+
+    const openBoderCountry = (e) => {
+        console.log("e.target single Card", e.target.value)
+        const clickedBorderCountry = allData.find((eachCountry)=> eachCountry.name === e.target.value)
+        setClickedCountry(clickedBorderCountry)
+    }
 
     return (
         <div className={`containerSingle ${theme}Details`}>
@@ -53,11 +60,11 @@ const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => 
                         <div>Languages: {languages.map((lang) => <span>{lang.name}</span> )}</div>
                     </div>
                 </div>
-               {<div className='borders'>
+                {<div className='borders'>
                         {`Border countries: `}
                         {borderFullNames?.length 
-                        ? (borderFullNames?.map((code) => 
-                        <button className={`${theme}Elements borderCountries`}>{code}</button>))
+                        ? (borderFullNames?.map((code, index) => 
+                        <button key={index} onClick={openBoderCountry} value ={borderFullNames[index]} className={`${theme}Elements borderCountries`}>{code}</button>))
                         : 'No bordering countries listed'
                         }
                 </div>}
