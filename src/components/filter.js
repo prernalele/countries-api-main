@@ -19,14 +19,14 @@ function Filter({setFilter}) {
     <div className='filterContainer'>
       <select 
         id="continentsList" 
-        className={`dropdown ${theme}`} 
+        className={`dropdown ${theme}Elements`} 
         onChange={countryBasedOnRegionFinder}>
-        <option className={`dropdown-options ${theme}`} value="Filter by Region">
-          Filter by Region
+        <option className={`dropdown-options ${theme}Elements`} value="" selected>
+          Filter by Regions
         </option>
         {uniqueRegionList.length > 0 &&
           uniqueRegionList.map((region, index) => (
-            <option key={index} value={region} className={theme}>
+            <option key={index} id="optionId" value={region} className={`dropdown-options ${theme}Elements`}>
               {region}
             </option>
           ))}

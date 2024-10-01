@@ -22,3 +22,11 @@
 .light {
   background-color: hsl(0, 0%, 94%)
 }
+
+@media screen and (max-width:500px) {
+  .container {
+    font-size: small;
+    flex-direction: row;
+  }
+  
+}
