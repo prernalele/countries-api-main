@@ -23,11 +23,15 @@ const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => 
     }
 
     const borderFullNames = 
-    borders.map((border) => allData.find((eachCountry) => eachCountry.alpha3Code === border ).name) 
+    borders?.map((border) => allData?.find((eachCountry) => eachCountry.alpha3Code === border ).name) 
 
     return (
         <div className={`containerSingle ${theme}Details`}>
-            <button className={`backButton ${theme}Details`} onClick={backToHome}>Back</button>
+            <div className={`arrowBack ${theme}Elements`} onClick={backToHome}>
+                <ion-icon name="arrow-back-outline" className ="arrow" style={{color: `${theme}` === "light" ? "black" : "white"}}></ion-icon>
+                <button className={`backButton ${theme}Elements`}>Back</button>
+            </div>
+
             <div className='details'>
                 <img className="leftSection flag" alt={`flag of ${name}`} src={flag} />
                 <div className='middleRightAndBordersContainer'>
@@ -49,12 +53,14 @@ const SingleCard = ({clickedCountry, isSingleCardClicked, setIsCardClicked}) => 
                         <div>Languages: {languages.map((lang) => <span>{lang.name}</span> )}</div>
                     </div>
                 </div>
-                <div className='borders'>
+               {<div className='borders'>
                         {`Border countries: `}
-                        {borderFullNames.map((code) => 
-                        <button className={`${theme}Elements borderCountries`}>{code}</button>
-                        )}
-                </div>
+                        {borderFullNames?.length 
+                        ? (borderFullNames?.map((code) => 
+                        <button className={`${theme}Elements borderCountries`}>{code}</button>))
+                        : 'No bordering countries listed'
+                        }
+                </div>}
                 </div>
             </div>
         </div>
