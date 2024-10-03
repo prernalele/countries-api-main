@@ -8,15 +8,13 @@ function Filter({setFilter}) {
   const {theme} = useContext(ThemeSwitchContext)
 
   const countryBasedOnRegionFinder = (e) => {
-    console.log("allData", allData)
-    console.log("userPickedRegion", e.target.value)
     const result = allData.filter((dataPoint) => dataPoint.region=== e.target.value)
-    console.log("result", result)
     setFilter(result)
   }
 
   return (
     <div className='filterContainer'>
+      <label for="continentsList"></label>
       <select 
         id="continentsList" 
         className={`dropdown ${theme}Elements`} 

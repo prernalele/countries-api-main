@@ -12,7 +12,6 @@ function Search({ searchCountry, setSearchCountry }) {
 
   const handleUserInput = (e) => {
     console.log("e.target", e.target)
-    setSearchInUse(true)
    const refValue = userInput.current.value;
    setSearchCountry(refValue);
 
@@ -25,25 +24,26 @@ function Search({ searchCountry, setSearchCountry }) {
     const newTimer = setTimeout(() => {
       
     }, 1000)
-    setSearchInUse(false)
     setTimer(newTimer)
   };
+
   return (
     <div className="searchBarAndIcon">
-      {!searchInUse && (
+      {
         <ion-icon 
         name="search-outline" 
-        className="searchIcon"
+        id="search-icon-id"
+        className={`searchIcon ${searchInUse} && style={display:none}`}
         aria-hidden="true"
         ></ion-icon>
-      )}
+      }
       <input
         type="text"
-        placeholder={!searchInUse ? "Search for a country" : ""}
+        placeholder= "Search for a country"
         className={`searchBar ${theme}`}
         ref={userInput}
-        onClick={() =>setSearchInUse(true)}
         onChange={handleUserInput}
+        onMouseover={() => setSearchInUse(true)}
       />
     </div>
   );
