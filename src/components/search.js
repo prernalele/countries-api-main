@@ -31,7 +31,11 @@ function Search({ searchCountry, setSearchCountry }) {
   return (
     <div className="searchBarAndIcon">
       {!searchInUse && (
-        <ion-icon name="search-outline" className="searchIcon"></ion-icon>
+        <ion-icon 
+        name="search-outline" 
+        className="searchIcon"
+        aria-hidden="true"
+        ></ion-icon>
       )}
       <input
         type="text"

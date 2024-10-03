@@ -35,7 +35,12 @@ const SingleCard = ({clickedCountry,setClickedCountry, isSingleCardClicked, setI
     return (
         <div className={`containerSingle ${theme}Details`}>
             <div className={`arrowBack ${theme}Elements`} onClick={backToHome}>
-                <ion-icon name="arrow-back-outline" className ="arrow" style={{color: `${theme}` === "light" ? "black" : "white"}}></ion-icon>
+                <ion-icon 
+                name="arrow-back-outline" 
+                className ="arrow" 
+                style={{color: `${theme}` === "light" ? "black" : "white"}}
+                aria-hidden="true"
+                ></ion-icon>
                 <button className={`backButton ${theme}Elements`}>Back</button>
             </div>
 

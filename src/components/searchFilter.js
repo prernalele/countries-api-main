@@ -11,7 +11,7 @@ function SearchFilter({ setFilteredResults }) {
 
   useEffect(() => {
     const newFilteredResult = allData.filter(
-      (data) => data.name.toLowerCase() === searchCountry.toLowerCase()
+      (data) => data.name.toLowerCase().includes(searchCountry.toLowerCase())
     );
     setFilteredResults(newFilteredResult);
   }, [searchCountry, allData, setFilteredResults]);
