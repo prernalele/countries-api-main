@@ -18,3 +18,17 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+@media screen and (max-width:350px) {
+  .cardHolderWrapper {
+      flex-direction: column;
+      align-content:space-around ;
+  }
+}
+
+@media screen and (min-width:500px) {
+  .cardHolderWrapper {
+      flex-direction: row;
+      justify-content: space-evenly;
+  }
+}

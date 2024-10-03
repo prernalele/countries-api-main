@@ -30,3 +30,17 @@
   }
   
 }
+
+@media screen and (min-width:500px) {
+  .searchResultWrapper {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .card {
+    width: 100vw;
+
+  }
+  
+}

@@ -1,7 +1,10 @@
 .searchBarAndIcon {
    display: flex;
+   align-items: center;
    flex-direction: row;
    align-items: center;
+   z-index: 12;
+   position:relative;
 }
 
 
@@ -10,17 +13,22 @@
     height: 5vh;
     width : 20vw;
     border-radius: .5em;
-    border-color: none;
+    outline: none;
+    flex:1;
+    display: block;
 }
 
 ::placeholder {
     /*color: hsl(0, 0%, 100%); */
     opacity: 1; /* Firefox */
-    padding: 50px;
+    padding: 3em;
 }
 
-.searchIcon {
-    justify-items: end;
+.searchBarAndIcon ion-icon {
+position:absolute;
+margin-left: 40px;
+padding-left: 0px;
+z-index: 10;
 }
 
 @media screen and (max-width:500px) {

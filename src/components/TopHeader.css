@@ -22,3 +22,12 @@
     color: hsl(0, 0%, 100%);
 }
 
+@media screen and (max-width:350px) {
+    .headerTitle {
+        font-size: medium;
+    }
+    .container {
+        justify-content: space-between;
+    }
+}
+

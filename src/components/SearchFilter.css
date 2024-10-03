@@ -26,6 +26,13 @@
   }
 }
 
+@media screen and (min-width:500px) {
+  .searchFilterContainer {
+    margin-right:1em;
+    justify-items: baseline;
+  }
+}
+
 .dark {
     background-color: hsl(209, 23%, 22%);
   }

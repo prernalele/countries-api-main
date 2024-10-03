@@ -24,3 +24,9 @@
     background-color: hsl(207, 26%, 17%);
     fill: hsl(0, 0%, 100%);
 }
+
+@media screen and (max-width:350px) {
+    .modeClass {
+        margin-right:20px;
+    }
+}

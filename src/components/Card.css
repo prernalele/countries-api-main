@@ -1,7 +1,7 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-around;
     border: 0.1px  black;
     margin: 2em;
     padding: 0px;
@@ -13,8 +13,9 @@
 .cardDetailsWrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin : 5px;
-    padding: 10px;
+    padding-left: 5px;
 }
 
 @media screen and (max-width: 900px) {
@@ -38,14 +39,22 @@
         font-size: small;
     }
 
-   
 }
+
+@media screen and (min-width:500px) and (max-width:699px) {
+    .wrapper {
+        padding: 1px;
+        height: 40vh;
+        width: 25vw;
+    }
+}
+
 #name-value {
     display: flex;
     font-weight: bold;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: medium;
-    margin: 10px;
+    margin: 1px;
 }
 .dark {
     background-color: hsl(207, 26%, 17%);
