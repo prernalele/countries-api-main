@@ -28,7 +28,7 @@ const Card = ({ data, filteredResults,isCardClicked,
           <img  data-name={name} alt={`flag of ${name}`} src={flags.svg} />
           <div data-name={name} className="cardDetailsWrapper">
             <div data-name={name} className="name">
-              <span data-name={name} id="name-value"> {name}</span>
+              <span data-name={name} id={`{name}-value`}> {name}</span>
             </div>
             <div  data-name={name}className="capital">
               <span data-name={name} className="label">Capital: </span>
